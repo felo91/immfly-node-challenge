@@ -1,10 +1,10 @@
-# Immfly Sr. Node challange
+# Immfly challenge
 
-## Prerequisites
+### Prerequisites
 
-- Node.js > v20 installed on your machine
+- Node.js > v20 installed
 
-## Installation
+### Installation
 
 Clone the repository to your local machine:
 
@@ -26,7 +26,7 @@ NODE_ENV=dev
 SIMPLE_ARRAY=['your', 'array', 'elements']
 ```
 
-## Running the Application
+### Running the Application
 
 Locally: `npm run dev`
 Docker:
@@ -38,11 +38,11 @@ docker run -p 3000:3000 node-docker
 
 You can stop the container with `docker stop <docker_id>`
 
-## Test
+### Test
 
 To run test suite use `npm run test`
 
-## API Endpoints
+### API Endpoints
 
 1. Country and Code Filter
 
