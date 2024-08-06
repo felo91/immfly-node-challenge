@@ -49,24 +49,24 @@ To run test suite use `npm run test`
 
  - GET /countries
  - Query parameters:
-  - filter: Filter results by country name or code (string).
-  - order: Order results by VAT percentage (asc or desc).
+   - filter: Filter results by country name or code (string).
+   - order: Order results by VAT percentage (asc or desc).
  - Example request:
-  - /countries?filter=and&order=asc
+   - /countries?filter=and&order=asc
 
 2. Reverse String with Vowels Uppercased
 
  - GET /reverse/:string
  - URL parameter:
-  - string: The string to be reversed and transformed.
+   - string: The string to be reversed and transformed.
  - Example request:
-  - /reverse/hello
+   - /reverse/hello
 
 3. Append to Array
 
  - GET /append
  - Query parameters:
-  - start: String to add at the start of the array.
-  - end: String to add at the end of the array.
+   - start: String to add at the start of the array.
+   - end: String to add at the end of the array.
  - Example request:
-  - /append?start=hello&end=bye
+   - /append?start=hello&end=bye
