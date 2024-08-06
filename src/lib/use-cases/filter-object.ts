@@ -1,4 +1,4 @@
-import { Country } from "../types/country.ts";
+import { Country } from "../types/country.js";
 
 export const filterCountryOrCode = (countries?: Country[], filter?: string) => {
   if (!countries) return;

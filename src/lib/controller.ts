@@ -1,11 +1,11 @@
 import { Router } from "express";
-import errorHandler from "./middlewares/errors.ts";
-import callAPI from "./use-cases/call-external-api.ts";
-import { transformString } from "./use-cases/transform-string.ts";
-import transformArray from "./use-cases/transform-array.ts";
-import { filterCountryOrCode } from "./use-cases/filter-object.ts";
-import { sortBy } from "./middlewares/sort-by.ts";
-import { Country } from "./types/country.ts";
+import errorHandler from "./middlewares/errors.js";
+import callAPI from "./use-cases/call-external-api.js";
+import { transformString, transformStringLikeArrayIntoArray } from "./use-cases/transform-string.js";
+import transformArray from "./use-cases/transform-array.js";
+import { filterCountryOrCode } from "./use-cases/filter-object.js";
+import { sortBy } from "./middlewares/sort-by.js";
+import { Country } from "./types/country.js";
 import Joi from "joi";
 
 const router = Router();
@@ -57,7 +57,8 @@ router.get("/append", (req, res) => {
   const { error, value } = appendEndpointSchema.validate(req.query);
   if (error) throw error;
   const { start, end } = value;
-  const result = transformArray.addBetween({ start, end, newItem: process.env.SIMPLE_ARRAY });
+  const newItem = transformStringLikeArrayIntoArray(process.env.SIMPLE_ARRAY);
+  const result = transformArray.addBetween({ start, end, newItem });
   res.json(result);
 });
 

@@ -1,11 +1,11 @@
 {
   "name": "immfly-node-challenge",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "src/lib/server.ts",
   "type": "module",
   "scripts": {
-    "build": "tsc",
-    "start": "node --env-file=.env dist/server.js",
+    "build": "node --import tsx --test src/tests/**/*test.ts && tsc",
+    "start": "node --env-file=.env dist/lib/server.js",
     "dev": "tsx watch --env-file=.env src/lib/server.ts",
     "test": "node --import tsx --test src/tests/**/*test.ts",
     "test:coverage": "node --experimental-test-coverage --test-reporter=lcov --test-reporter-destination=lcov.info  --import tsx **/*test.ts"

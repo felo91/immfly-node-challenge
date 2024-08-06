@@ -1,6 +1,11 @@
 import { describe, it } from "node:test";
 import { strict as assert } from "node:assert";
-import { reverseString, transforVowelToUppercase, transformString } from "../../lib/use-cases/transform-string.ts";
+import {
+  reverseString,
+  transforVowelToUppercase,
+  transformString,
+  transformStringLikeArrayIntoArray,
+} from "../../lib/use-cases/transform-string";
 
 describe("trasnform-array", () => {
   describe("reverseString function", () => {
@@ -30,6 +35,31 @@ describe("trasnform-array", () => {
 
     it("should return an empty string if input is empty", () => {
       assert.strictEqual(transformString(""), "");
+    });
+  });
+
+  describe("transformStringLikeArrayIntoArray", () => {
+    it("should transform string representation of an array into an actual array", () => {
+      const input = "['apple', 'banana', 'cherry']";
+      const expected = ["apple", "banana", "cherry"];
+      assert.deepEqual(transformStringLikeArrayIntoArray(input), expected);
+    });
+
+    it("should handle empty string inputs", () => {
+      const input = "[]";
+      const expected = [];
+      assert.deepEqual(transformStringLikeArrayIntoArray(input), expected);
+    });
+
+    it("should ignore spaces and quotes correctly", () => {
+      const input = '[" apple", " banana ", "cherry " ]';
+      const expected = ["apple", "banana", "cherry"];
+      assert.deepEqual(transformStringLikeArrayIntoArray(input), expected);
+    });
+
+    it("should ignore throw an error if result is not an Array", () => {
+      const input = '[" apple", " ';
+      assert.deepEqual(transformStringLikeArrayIntoArray(input), ["apple"]);
     });
   });
 });

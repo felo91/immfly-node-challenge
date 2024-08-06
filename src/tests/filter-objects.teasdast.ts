@@ -1,8 +1,8 @@
 /*import { strict as assert } from "node:assert";
 import { describe, it } from "node:test";
 import { Request, Response, NextFunction } from "express";
-import { filterCountryOrCode } from "../lib/use-cases/filter-object.ts";
-import { Country } from "../lib/types/country.ts";
+import { filterCountryOrCode } from "../lib/use-cases/filter-object";
+import { Country } from "../lib/types/country";
 
 const createRequest = (query: object): Request => {
   return { query } as Request;

@@ -1,6 +1,6 @@
 import { describe, it, mock } from "node:test";
 import { strict as assert } from "node:assert";
-import { get } from "../../lib/use-cases/call-external-api.ts";
+import { get } from "../../lib/use-cases/call-external-api";
 import axios from "axios";
 
 describe("get from callExternalApi", () => {

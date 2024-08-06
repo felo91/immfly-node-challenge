@@ -1,7 +1,7 @@
 import { describe, it } from "node:test";
 import { strict as assert } from "node:assert";
-import { filterCountryOrCode } from "../../lib/use-cases/filter-object.ts";
-import { Country } from "../../lib/types/country.ts";
+import { filterCountryOrCode } from "../../lib/use-cases/filter-object";
+import { Country } from "../../lib/types/country";
 
 describe("filterCountryOrCode", () => {
   it("should return all countries when filter is empty", () => {

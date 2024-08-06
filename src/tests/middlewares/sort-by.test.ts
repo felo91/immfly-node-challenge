@@ -1,7 +1,7 @@
 import { strict as assert } from "node:assert";
 import { describe, it } from "node:test";
 import { Request, Response, NextFunction } from "express";
-import { sortBy } from "../../lib/middlewares/sort-by.ts";
+import { sortBy } from "../../lib/middlewares/sort-by";
 
 const createRequest = (query: object): Request => {
   return {
