@@ -29,6 +29,7 @@ SIMPLE_ARRAY=['your', 'array', 'elements']
 ### Running the Application
 
 Locally: `npm run dev`
+
 Docker:
 
 ```bash
